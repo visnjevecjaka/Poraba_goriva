@@ -1,6 +1,7 @@
 # Poraba_goriva
 
-Analiziral bom porabo pogostih vozil, podatke za analizo bom pridobil na naslednji spletni strani: [FUELECONOMY](https://fueleconomy.gov/).
+Analiziral bom porabo pogostih vozil, podatke za analizo bom pridobil na naslednji spletni strani: 
+[FUELECONOMY](https://fueleconomy.gov/).
 
 Za vsak model avtomomobila bom zajel:
 - porabo goriva
