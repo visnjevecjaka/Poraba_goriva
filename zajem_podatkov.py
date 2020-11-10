@@ -47,7 +47,7 @@ def get_data():
         data_writer = csv.writer(data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         data_writer.writerow(['make','model','year','cylinder number','displacement', 'fuel type', 'consumption'])
 
-        for i in range(15589, 43424):
+        for i in range(1, 43425):
             request = requests.get(f'https://www.fueleconomy.gov/ws/rest/vehicle/{i}')
             print(i)
 
