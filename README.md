@@ -11,6 +11,7 @@ Za vsak model avtomomobila sem zajel naslednje podatke:
 - delovna prostornina
 - tip goriva
 - poraba
+
 Podatki so shranjeni v datoteki data.csv.
 
 Delovne hipoteze:
