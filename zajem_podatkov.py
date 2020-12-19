@@ -2,6 +2,7 @@ import requests
 import xml.etree.ElementTree as ET
 import csv
 from datetime import date, datetime
+import pandas as pd
 
 startTime = datetime.now()
 
@@ -55,7 +56,7 @@ def get_data():
     
     # id prvega avta proizvedenega leta 2000 je 15589, zajeli pa bomo vse avtomobile od takrat do danes. id zadnjega je 43424
 
-    with open('main_export_with_consumptions2.csv', mode='w', newline='') as data:
+    with open('main_export.csv', mode='w', newline='') as data:
         data_writer = csv.writer(data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         data_writer.writerow(['make','model','year','cylinder number',
         'displacement', 'fuel type', 'combined consumption',
@@ -84,4 +85,67 @@ def get_data():
 
             data_writer.writerow([make, model, year, cylinder_nr, displacement, fuel_type, combLKM, cityLKM, highwayLKM])
 
-get_data()
+# get_data()
+
+def createMainDB():
+    db = pd.read_csv('podatki/main_export.csv')
+
+    # get all the makes in a list for referencing
+    makes = db['make']
+    makes = list(dict.fromkeys(makes))
+    makes.sort()
+    makes.remove('make')
+
+    # get all the years in a list for referencing
+    years = db['year']
+    years = list(dict.fromkeys(years))
+    years.sort()
+    years.remove('year')
+
+    big_data_dict = {
+        'year': years
+    }
+
+    # sort by make year, 4 cylinders and calculate all avg consumptions
+    big_data = pd.DataFrame(data=big_data_dict)
+
+    for make in makes:
+        averages = []
+        for year in years:
+            print(make, year)
+            # print(make, year)
+            temporary_db = db.loc[
+            (db['make'] == make) & 
+            (db['year'] == year) & 
+            (db['cylinder number'] == '4') &
+            (db['fuel type'] != 'Diesel')]
+
+            averages.append(temporary_db['consumption'].astype(float).mean())
+
+        big_data[make] = averages
+
+    # drop all brands without consumption records, sort by year
+    # save filtered data as csv
+
+    big_data.sort_values(by=['year'])
+    big_data.dropna(how='all', axis=1, inplace=True)
+    big_data.to_csv('podatki/yearXbrand.csv', index=False)
+    print('File created.')
+
+def createBrandAverages():
+    # Calculate the averages of all brand for all years
+    yearXbrandDB = pd.read_csv('podatki/yearXbrand.csv')
+    
+    brandAveragesDict = {}
+
+    for make in yearXbrandDB.columns:
+        brandAveragesDict[make]=yearXbrandDB[make].astype(float).mean()
+
+    brandAverages = pd.DataFrame([brandAveragesDict])
+    brandAverages.drop(columns=['year'], inplace=True)
+    brandAverages.to_csv('podatki/brandAverages.csv', index=False)
+    print('File created.')
+
+createMainDB()
+createBrandAverages()
+
