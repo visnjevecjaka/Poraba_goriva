@@ -6,17 +6,19 @@ Analiziral bom porabo pogostih vozil, podatke za analizo bom pridobil na nasledn
 Za vsak model avtomomobila sem zajel naslednje podatke:
 - znamka
 - model
-- leto
+- leto izdelave
 - število cilindrov
 - delovna prostornina
 - tip goriva
-- poraba
+- kombinirana poraba
+- mestna poraba
+- avtocestna poraba
 
 Podatki so shranjeni v datoteki data.csv.
 
 Zastavljena vprašanja:
 
-- 1. vprašanje: Kako se povprečne porabe avtomobilov priljubljenih znamk razlikujejo med sabo?
-- 2. vprašanje: Kako se med nemškimi znamkami višjega cenovnega razreda Audi, BMW in Mercedes-Benz razlikuje povprečna poraba skozi leta.
-- 3. vprašanje: Kako se je prostornina motorja pri italijaskih luksuznih znamkah Ferrari in Lamborghini spreminjala po letih?
-- 4. vprašanje: Kako sta se po letih spreminjali povprečna mestna in avtocestna poraba pri avtomobilski znamki Toyota?
+- Kako se povprečne porabe avtomobilov priljubljenih znamk razlikujejo med sabo?
+- Kako se med nemškimi znamkami višjega cenovnega razreda Audi, BMW in Mercedes-Benz razlikuje povprečna poraba skozi leta?
+- Kako se je prostornina motorja pri italijaskih luksuznih znamkah Ferrari in Lamborghini spreminjala po letih?
+- Kako sta se po letih spreminjali povprečna mestna in avtocestna poraba pri avtomobilski znamki Toyota?
