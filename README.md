@@ -14,7 +14,9 @@ Za vsak model avtomomobila sem zajel naslednje podatke:
 
 Podatki so shranjeni v datoteki data.csv.
 
-Delovne hipoteze:
-- Kakšne se razlike v porabi razlikujejo glede na znamko avtomobila? 
-- Kako se razlikuje poraba pri različnih vožnjah (mestna, kombinirana, izvenmestna) glede na moč motorja?
-- Ali lahko iz podatkov o moči motorja avtomobila sklepamo na njegovo porabo?
+Zastavljena vprašanja:
+
+- 1. vprašanje: Kako se povprečne porabe avtomobilov priljubljenih znamk razlikujejo med sabo?
+- 2. vprašanje: Kako se med nemškimi znamkami višjega cenovnega razreda Audi, BMW in Mercedes-Benz razlikuje povprečna poraba skozi leta.
+- 3. vprašanje: Kako se je prostornina motorja pri italijaskih luksuznih znamkah Ferrari in Lamborghini spreminjala po letih?
+- 4. vprašanje: Kako sta se po letih spreminjali povprečna mestna in avtocestna poraba pri avtomobilski znamki Toyota?
