@@ -14,7 +14,6 @@ Za vsak model avtomomobila sem zajel naslednje podatke:
 - mestna poraba
 - avtocestna poraba
 
-Podatki so shranjeni v datoteki data.csv.
 
 Zastavljena vprašanja:
 
