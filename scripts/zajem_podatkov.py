@@ -53,7 +53,7 @@ def get_year(tree):
 
 def get_data():
     
-    # id prvega avta proizvedenega leta 2000 je 15589, zajeli pa bomo vse avtomobile od takrat do danes. id zadnjega je 43424
+    # zajeli pa bomo vse avtomobile od leta 1985 do danes. id zadnjega je 43424
 
     with open('main_export_with_consumptions2.csv', mode='w', newline='') as data:
         data_writer = csv.writer(data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
